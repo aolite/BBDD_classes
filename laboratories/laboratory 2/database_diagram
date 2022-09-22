@@ -1,0 +1,48 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class assignats {
+   num_vol: integer
+   data: date
+}
+class autoritzats {
+   num_avio: integer
+}
+class avions {
+   nom: varchar(50)
+   capacitat: integer
+   estat: varchar(10)
+}
+class bitllets {
+   num_vol: integer
+   data: date
+}
+class pilots {
+   nom: varchar
+   sou: double precision
+   edat: integer
+}
+class viatgers {
+   nom: varchar
+   adresa: varchar
+   telefon: varchar
+   ciutat: varchar
+}
+class vols {
+   origen: varchar(50)
+   desti: varchar(50)
+   distancia: double precision
+   hora_sortida: time
+   hora_arribada: time
+}
+
+assignats    -[#595959,plain]-^  avions      : "num_avio"
+assignats    -[#595959,plain]-^  vols        : "num_vol"
+autoritzats  -[#595959,plain]-^  avions      : "num_avio"
+autoritzats  -[#595959,plain]-^  pilots      : "nss"
+bitllets     -[#595959,plain]-^  viatgers    : "dni"
+bitllets     -[#595959,plain]-^  vols        : "num_vol"
+@enduml
