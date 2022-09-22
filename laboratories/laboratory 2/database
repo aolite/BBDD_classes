@@ -4,22 +4,14 @@
 top to bottom direction
 skinparam linetype ortho
 
-class assignats {
-   num_vol: integer
-   data: date
-}
-class autoritzats {
-   num_avio: integer
-}
+class assignats
+class autoritzats
 class avions {
-   nom: varchar(50)
+   nom: varchar
    capacitat: integer
-   estat: varchar(10)
+   estat: varchar
 }
-class bitllets {
-   num_vol: integer
-   data: date
-}
+class bitllets
 class pilots {
    nom: varchar
    sou: double precision
