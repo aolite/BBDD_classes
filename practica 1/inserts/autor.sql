@@ -1,0 +1,12 @@
+INSERT INTO public.autor (isbn, dni) VALUES (1, '15784052A');
+INSERT INTO public.autor (isbn, dni) VALUES (2, '50625125D');
+INSERT INTO public.autor (isbn, dni) VALUES (3, '91452362S');
+INSERT INTO public.autor (isbn, dni) VALUES (4, '34390256N');
+INSERT INTO public.autor (isbn, dni) VALUES (5, '20528666Q');
+INSERT INTO public.autor (isbn, dni) VALUES (6, '15784052A');
+INSERT INTO public.autor (isbn, dni) VALUES (7, '50625125D');
+INSERT INTO public.autor (isbn, dni) VALUES (8, '91452362S');
+INSERT INTO public.autor (isbn, dni) VALUES (9, '34390256N');
+INSERT INTO public.autor (isbn, dni) VALUES (10, '20528666Q');
+INSERT INTO public.autor (isbn, dni) VALUES (11, '15784052A');
+INSERT INTO public.autor (isbn, dni) VALUES (12, '91452362S');
