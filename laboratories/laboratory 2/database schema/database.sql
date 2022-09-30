@@ -18,9 +18,9 @@ create table avions
     num_avio  serial
         constraint avions_pk
             primary key,
-    nom       varchar(50),
+    nom       varchar,
     capacitat integer,
-    estat     varchar(10)
+    estat     varchar
 );
 
 alter table avions
@@ -29,16 +29,14 @@ alter table avions
 create table assignats
 (
     num_avio integer not null
-        constraint assignats_num_avio_pk
-            primary key
         constraint assignats_avions_fk
             references avions,
     num_vol  integer not null
-        constraint assignats_num_vol_pk
-            unique
         constraint assignats_vols_fk
             references vols,
-    data     date    not null
+    data     date    not null,
+    constraint assignats_num_avio_pk
+        primary key (num_avio, num_vol, data)
 );
 
 alter table assignats
@@ -64,15 +62,13 @@ alter table pilots
 create table autoritzats
 (
     nss      serial
-        constraint autoritzats_nss_pk
-            primary key
         constraint autoritzats_pilots_nss_fk
             references pilots,
     num_avio integer not null
-        constraint autoritzats_numavio_pk
-            unique
         constraint autoritzats_avions_numavio_fk
-            references avions
+            references avions,
+    constraint autoritzats_pk
+        primary key (nss, num_avio)
 );
 
 alter table autoritzats
@@ -85,7 +81,7 @@ create table viatgers
             primary key,
     nom     varchar,
     adresa  varchar,
-    telefon integer,
+    telefon varchar,
     ciutat  varchar
 );
 
@@ -95,18 +91,14 @@ alter table viatgers
 create table bitllets
 (
     dni     varchar not null
-        constraint bitllets_dni_pk
-            primary key
         constraint bitllets_viatgers_null_fk
             references viatgers,
     num_vol integer not null
-        constraint bitllets_numvol_pk
-            unique
         constraint bitllets_vols_null_fk
             references vols,
-    data    date    not null
-        constraint bitllets_data_pk
-            unique
+    data    date    not null,
+    constraint bitllets_primary_pk
+        primary key (dni, num_vol, data)
 );
 
 alter table bitllets
